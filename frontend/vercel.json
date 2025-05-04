@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "public": true,
   "builds": [
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "src": "vite.config.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -14,3 +16,4 @@
     }
   ]
 }
+
