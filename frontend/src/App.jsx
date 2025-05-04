@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Hero from './pages/Hero';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Register from "./pages/Register";
@@ -14,7 +15,8 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Hero />} />
+          <Route path="/countries" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/country/:code" element={<CountryDetails />} />

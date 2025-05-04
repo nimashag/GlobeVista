@@ -36,12 +36,13 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* App Name */}
         <div className="text-xl font-bold text-gray-800 dark:text-white">
-          <span className="md:inline">🌍 GlobeVista</span>
+          <span className="md:inline">🌐Ᏽ𐌋Ꝋ𐌁𐌄ᕓ𐌉𐌔𐌕𐌀</span>
         </div>
 
         {/* Right section: Desktop */}
         <div className="hidden md:flex items-center gap-6 text-sm text-gray-700 dark:text-gray-300">
         <Link to="/" className="hover:text-blue-500">Home</Link>
+        <Link to="/countries" className="hover:text-blue-500">Countries</Link>
           {user && (
             <Link to="/favorites" className="hover:text-blue-500">Favorites</Link>
           )}
