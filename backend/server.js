@@ -7,6 +7,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const favoriteRoutes = require('./routes/favoriteRoutes');
+const connectDB = require('./adapters/db');
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,17 @@ app.use(morgan('dev')); // Logs requests
 // Healthcheck route
 app.get('/', (req, res) => {
   res.send('Server is running');
+});
+
+// MongoDB connection middleware
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('DB connection error:', err);
+    res.status(500).json({ message: 'Database connection failed' });
+  }
 });
 
 // Routes

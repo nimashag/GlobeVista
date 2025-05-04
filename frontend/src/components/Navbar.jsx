@@ -93,7 +93,7 @@ function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800 py-6 px-6 text-center text-gray-700 dark:text-gray-200 space-y-4">
           <Link to="/" className="block hover:text-blue-500">Home</Link>
-          <Link to="/countries" className="hover:text-blue-500">Countries</Link>
+          <Link to="/countries" className="block hover:text-blue-500">Countries</Link>
           {user && (
             <Link to="/favorites" className="block hover:text-blue-500">Favorites</Link>
           )}
