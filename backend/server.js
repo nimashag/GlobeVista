@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const morgan = require('morgan');
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
@@ -10,6 +11,7 @@ const favoriteRoutes = require('./routes/favoriteRoutes');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(morgan('dev')); // Logs requests
 
 // Healthcheck route
 app.get('/', (req, res) => {
